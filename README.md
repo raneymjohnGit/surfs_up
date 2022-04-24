@@ -60,19 +60,29 @@ Additional Queries:
         
 -- Following code will give information about precipitation for the month of June
 
-month_str = "06"
-results = session.query(Measurement.prcp).filter(func.strftime("%m", Measurement.date) == month_str).all()
-june_prcp = list(np.ravel(results))
-June_Prcp_df = pd.DataFrame(june_prcp,columns=["June Prcps"])
-June_Prcp_df.describe()
+month_str = "06"  
+
+results = session.query(Measurement.prcp).filter(func.strftime("%m", Measurement.date) == month_str).all()  
+
+june_prcp = list(np.ravel(results))  
+
+June_Prcp_df = pd.DataFrame(june_prcp,columns=["June Prcps"])  
+
+June_Prcp_df.describe()  
 
 
-2.  Top 10 hignest paid employees
+
+2.  December Precipitation statistics
 
 -- Following code will give information about precipitation for the month of December
 
-month_str = "12"
-results = session.query(Measurement.prcp).filter(func.strftime("%m", Measurement.date) == month_str).all()
-december_prcp = list(np.ravel(results))
-December_Prcp_df = pd.DataFrame(december_prcp,columns=["December Prcps"])
-December_Prcp_df.describe()
+month_str = "12"  
+
+results = session.query(Measurement.prcp).filter(func.strftime("%m", Measurement.date) == month_str).all()  
+
+december_prcp = list(np.ravel(results))  
+
+December_Prcp_df = pd.DataFrame(december_prcp,columns=["December Prcps"])  
+
+December_Prcp_df.describe()  
+
